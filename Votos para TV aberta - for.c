@@ -1,9 +1,9 @@
 #include <stdio.h>
 main()
 {
-    int a, b=1, globo, sbt, record, bandeirantes, none;
+    int a, b=1, globo=0, sbt=0, record=0, bandeirantes=0, none=0;	
     
-    for (b=1;b<=1500;b=b+1)
+    while (b<=5)
     {
     	printf("Vote: \n");
     	scanf("%d", &a);
@@ -19,15 +19,18 @@ main()
                 record=record+1;
                 break;
             case 4:
-                none=none+1;
+                bandeirantes=bandeirantes+1;
                 break;
             case 5:
-                bandeirantes=bandeirantes+1;
+                none=none+1;
                 break;
             default:
                 printf("Voce cometeu algum erro, tente novamente.\n");
-                break;
+                a--;
+				break;
         }
+    b=b+1;
+    
     }
     printf("O numero total de votos para cada fica:\nGlobo: %d\nSBT: %d\nRecord: %d\nBandeirantes: %d\nNulos: %d\n", globo, sbt, record, bandeirantes, none);
 }
